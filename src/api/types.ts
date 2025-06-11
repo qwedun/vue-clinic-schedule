@@ -1,29 +1,28 @@
 export type ClinicSchedule = {
-    startsOn: string;
-    endsOn: string;
-    doctors: Doctor[];
+  startsOn: number
+  endsOn: number
+  doctors: Doctor[]
 }
-type Doctor = {
-    id: number;
-    name: string;
-    startsOn: string;
-    endsOn: string;
-    profession: string;
-    img: string;
-    availableOperations: Operation[];
-    schedule: DoctorSchedule[];
-}
-
-type DoctorSchedule = {
-    startsOn: string;
-    endsOn: string;
-    type: ScheduleType;
+export type Doctor = {
+  id: number
+  name: string
+  startsOn: number
+  endsOn: number
+  profession: string
+  img: string
+  availableOperations: Operation[]
+  schedule: DoctorSchedule[]
 }
 
-type Operation = {
-    name: string;
-    requiredTime: string;
+export type DoctorSchedule = {
+  startsOn: number
+  endsOn: number
+  type: ScheduleType
+}
+
+export type Operation = {
+  name: string
+  requiredTime: number
 }
 
 type ScheduleType = 'lunch' | 'operation' | 'available' | 'unavailable'
-
